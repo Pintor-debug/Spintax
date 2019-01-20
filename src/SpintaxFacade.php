@@ -1,6 +1,6 @@
 <?php
 
-namespace MadeITBelgium\Spintax\Facade;
+namespace MadeITBelgium\Spintax;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @author     Tjebbe Lievens <tjebbe.lievens@madeit.be>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-3.txt    LGPL
  */
-class Spintax extends Facade
+class SpintaxFacade extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -1,6 +1,6 @@
 <?php
 
-namespace MadeITBelgium\Spintax\Facade;
+namespace MadeITBelgium\Spintax;
 
 use Illuminate\Support\ServiceProvider;
 use MadeITBelgium\Spintax\Spintax;
@@ -12,7 +12,7 @@ use MadeITBelgium\Spintax\Spintax;
  * @author     Tjebbe Lievens <tjebbe.lievens@madeit.be>
  * @license    http://www.gnu.org/licenses/old-licenses/lgpl-3.txt    LGPL
  */
-class Spintax extends ServiceProvider
+class SpintaxServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
