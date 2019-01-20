@@ -156,6 +156,6 @@ class SpintaxTest extends \PHPUnit\Framework\TestCase
 
         $startTime = microtime(true);
         $content->getAll();
-        $this->assertLessThan(0.5, microtime(true) - $startTime);
+        $this->assertLessThan(0.8, microtime(true) - $startTime);
     }
 }
