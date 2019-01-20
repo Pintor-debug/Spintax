@@ -7,6 +7,7 @@
 [![License](https://poser.pugx.org/madeITBelgium/Spintax/license.svg)](https://packagist.org/packages/madeITBelgium/Spintax)
 
 With this (Laravel) package you can create multiple articles based on a single text.
+A forked and extended version of https://github.com/chilloutdevelopment/ChillDevSpintax
 
 # Installation
 
@@ -18,10 +19,11 @@ Require this package in your `composer.json` and update composer.
 
 # Documentation
 ## Usage
+### Get a random spin
 ```php
 use MadeITBelgium\Spintax\Facade\Spintax;
 
-Spintax::parse('Your {text|content} here.');
+Spintax::parse('Your {text|content} here.')->generate();
 ```
 
 ```php
@@ -31,7 +33,7 @@ $spintax = Parser::parse('Schrödinger’s Cat is {dead|alive}.');
 $string = $spintax->generate();
 ```
 
-Get all possible spins:
+### Get all possible spins:
 ```php
 use MadeITBelgium\Spintax\Facade\Spintax;
 
@@ -44,7 +46,7 @@ use MadeITBelgium\Spintax\Spintax;
 $spintax = Parser::parse('Schrödinger’s Cat is {dead|alive}.');
 $strings = $spintax->getAll();
 ```
-
+### Other examples
 But there is much more that than that in our library. First of all nested structures are supported:
 
 ```php
