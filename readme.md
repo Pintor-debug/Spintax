@@ -21,49 +21,49 @@ Require this package in your `composer.json` and update composer.
 ## Usage
 ### Get a random spin
 ```php
-use MadeITBelgium\Spintax\Facade\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
 Spintax::parse('Your {text|content} here.')->generate();
 ```
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
-$spintax = Parser::parse('Schrödinger’s Cat is {dead|alive}.');
+$spintax = Spintax::parse('Schrödinger’s Cat is {dead|alive}.');
 $string = $spintax->generate();
 ```
 
 ### Get all possible spins:
 ```php
-use MadeITBelgium\Spintax\Facade\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
 Spintax::parse('Your {text|content} here.')->getAll();
 ```
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
-$spintax = Parser::parse('Schrödinger’s Cat is {dead|alive}.');
+$spintax = Spintax::parse('Schrödinger’s Cat is {dead|alive}.');
 $strings = $spintax->getAll();
 ```
 ### Other examples
 But there is much more that than that in our library. First of all nested structures are supported:
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
-$spintax = Parser::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
+$spintax = Spintax::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
 $string = $spintax->generate();
 ```
 
 Still not finished! With our brilliant library you can detect the path used to generate given variant and re-use it later:
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
 $path = [];
 
-$spintax = Parser::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
+$spintax = Spintax::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
 // since $path is empty, random values will be used for missing indices and $path will be filled with them
 $string = $spintax->generate($path);
 
@@ -84,11 +84,11 @@ Paths are counted from 0, each entry is next step.
 You can also use partial paths to define just the starting path and all missing parts will be choosen randomly:
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
 $path = [0];
 
-$spintax = Parser::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
+$spintax = Spintax::parse('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.');
 // this will generate one of "I love {}." variants
 $string = $spintax->generate($path);
 ```
@@ -96,9 +96,9 @@ $string = $spintax->generate($path);
 For all this there is a shortcut method `Parser::replicate()` (you can use comma-separated number in a single string as second argument in this shortcut method):
 
 ```php
-use MadeITBelgium\Spintax\Spintax;
+use MadeITBelgium\Spintax\SpintaxFacade as Spintax;
 
-echo Parser::replicate('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.', '0,0');
+echo Spintax::replicate('I {love {PHP|Java|C|C++|JavaScript|Python}|hate Ruby}.', '0,0');
 ```
 
 The complete documentation can be found at: [http://www.madeit.be/](http://www.madeit.be/)
